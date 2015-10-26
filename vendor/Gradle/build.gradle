@@ -1,0 +1,48 @@
+buildscript {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+  dependencies {
+    
+  }
+}
+
+allprojects {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+
+task generateDependencies(type: Copy) {
+  from sourceSets.main.runtimeClasspath
+  into 'dependencies/'
+}
+
+repositories {
+  
+    maven {
+      url "/Users/Adrian/.rubymotion-android/sdk/extras/android/m2repository/"
+    }
+  
+  
+    maven {
+      url "/Users/Adrian/.rubymotion-android/sdk/extras/google/m2repository/"
+    }
+  
+  
+}
+
+dependencies {
+  
+  
+    
+      compile 'com.danikula:videocache:2.3.1'
+    
+  
+}
